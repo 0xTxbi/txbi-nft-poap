@@ -44,8 +44,8 @@
       ]
     },
     "/Users/UglyMolluska/Desktop/Projects/Web Development/WEB3/txbi-nft-poap/packages/hardhat/contracts/TxbiTix.sol": {
-      "lastModificationDate": 1657714529999,
-      "contentHash": "9c9e15e8b169c0575ce54290e66c6d4e",
+      "lastModificationDate": 1657715427848,
+      "contentHash": "cd870cf0ddd7ece172977c044b501436",
       "sourceName": "contracts/TxbiTix.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -78,6 +78,8 @@
         }
       },
       "imports": [
+        "hardhat/console.sol",
+        "@openzeppelin/contracts/utils/Counters.sol",
         "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol"
       ],
       "versionPragmas": [
@@ -521,6 +523,48 @@
       ],
       "artifacts": [
         "IERC165"
+      ]
+    },
+    "/Users/UglyMolluska/Desktop/Projects/Web Development/WEB3/txbi-nft-poap/packages/hardhat/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1657714159697,
+      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
+      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
       ]
     }
   }
