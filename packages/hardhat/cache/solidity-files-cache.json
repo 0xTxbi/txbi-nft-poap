@@ -44,8 +44,8 @@
       ]
     },
     "/Users/UglyMolluska/Desktop/Projects/Web Development/WEB3/txbi-nft-poap/packages/hardhat/contracts/TxbiTix.sol": {
-      "lastModificationDate": 1657749682439,
-      "contentHash": "910e75f113f3da532ba12eed884488f9",
+      "lastModificationDate": 1657750313452,
+      "contentHash": "9fe558bc0474747e06a259783f5df2f6",
       "sourceName": "contracts/TxbiTix.sol",
       "solcConfig": {
         "version": "0.8.4",

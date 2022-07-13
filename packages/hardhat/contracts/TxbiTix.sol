@@ -16,6 +16,8 @@ contract TxbiTix is ERC721URIStorage {
     bool public saleIsActive = false;
     uint256 public totalTickets = 10;
     uint256 public availableTickets = 10;
+    // mint price
+    uint256 public mintPrice = 50000000000000000;
 
     mapping(address => uint256[]) public holderTokenIDs;
 
@@ -25,8 +27,9 @@ contract TxbiTix is ERC721URIStorage {
     }
 
     // Token mint funciton
-    function mint() public {
+    function mint() public payable {
         require(availableTickets > 0, "tickets outsold");
+        require(msg.value >= mintPrice, "insufficient ETH");
 
         string[3] memory svg;
         svg[
