@@ -6,8 +6,9 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract TxbiTix is ERC721URIStorage {
+contract TxbiTix is ERC721URIStorage, Ownable {
     // counter to keep track of the current token ID
     using Counters for Counters.Counter;
     Counters.Counter private currentId;
@@ -26,10 +27,11 @@ contract TxbiTix is ERC721URIStorage {
         console.log(currentId.current());
     }
 
-    // Token mint funciton
+    // Token mint function
     function mint() public payable {
         require(availableTickets > 0, "tickets outsold");
         require(msg.value >= mintPrice, "insufficient ETH");
+        require(saleIsActive, "Tickets are currently unavailable");
 
         string[3] memory svg;
         svg[
@@ -84,12 +86,12 @@ contract TxbiTix is ERC721URIStorage {
     }
 
     // enable availabilty of ticket sale
-    function openSale() public {
+    function openSale() public onlyOwner {
         saleIsActive = true;
     }
 
     // disable availabilty of ticket sale
-    function closeSale() public {
+    function closeSale() public onlyOwner {
         saleIsActive = false;
     }
 }

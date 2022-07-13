@@ -44,8 +44,8 @@
       ]
     },
     "/Users/UglyMolluska/Desktop/Projects/Web Development/WEB3/txbi-nft-poap/packages/hardhat/contracts/TxbiTix.sol": {
-      "lastModificationDate": 1657750313452,
-      "contentHash": "9fe558bc0474747e06a259783f5df2f6",
+      "lastModificationDate": 1657755966658,
+      "contentHash": "b9a97de996bcc1079af1bf36d7ed91b2",
       "sourceName": "contracts/TxbiTix.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -82,7 +82,8 @@
         "@openzeppelin/contracts/utils/Counters.sol",
         "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
         "@openzeppelin/contracts/utils/Strings.sol",
-        "@openzeppelin/contracts/utils/Base64.sol"
+        "@openzeppelin/contracts/utils/Base64.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
       ],
       "versionPragmas": [
         ">=0.8.0 <0.9.0"
@@ -609,6 +610,50 @@
       ],
       "artifacts": [
         "Base64"
+      ]
+    },
+    "/Users/UglyMolluska/Desktop/Projects/Web Development/WEB3/txbi-nft-poap/packages/hardhat/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1657714159697,
+      "contentHash": "e436cea06129be2c73cda4b1acc848b5",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
       ]
     }
   }

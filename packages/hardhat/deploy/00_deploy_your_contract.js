@@ -27,6 +27,8 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
 
   // Getting a previously deployed contract
   const TxbiTix = await ethers.getContract("TxbiTix", deployer);
+
+  await TxbiTix.transferOwnership("0x100343159a37C4e72Df4Bb706036f323017d2040");
   /*  await TxbiTix.setPurpose("Hello");
   
     // To take ownership of TxbiTix using the ownable library uncomment next line and add the 
