@@ -1,0 +1,87 @@
+{
+  "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "closeSale",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "openSale",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "saleIsActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x0c6991cd1de6da72d14f4bc798176a2c55b13abd1f31c83bfc2cba7c269e1ce9",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+    "transactionIndex": 0,
+    "gasUsed": "95305",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xb8dd536d4b6a3591de98763f1951c03ef91257a24eed0598e57fb597374e77ea",
+    "transactionHash": "0x0c6991cd1de6da72d14f4bc798176a2c55b13abd1f31c83bfc2cba7c269e1ce9",
+    "logs": [],
+    "blockNumber": 4,
+    "cumulativeGasUsed": "95305",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "6ce51956e7815f1f7389d153c74d4568",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"closeSale\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"openSale\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"saleIsActive\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/YourContract.sol\":\"YourContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/YourContract.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n\\n//SPDX-License-Identifier: MIT\\n\\ncontract YourContract {\\n    bool public saleIsActive = false;\\n\\n    constructor() payable {}\\n\\n    function openSale() public {\\n        saleIsActive = true;\\n    }\\n\\n    function closeSale() public {\\n        saleIsActive = false;\\n    }\\n}\\n\",\"keccak256\":\"0x57edcb41043a7fea1dd7a08a9b7609f54dc08e64e948ed2207802732e5ccf11f\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60806040526000805460ff1916905560b88061001c6000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c8063167ff46f146041578063eb8d2444146054578063ee55efee146074575b600080fd5b60526000805460ff19166001179055565b005b60005460609060ff1681565b604051901515815260200160405180910390f35b60526000805460ff1916905556fea2646970667358221220b933bc493913bede07b1afed3bd96d775274b2379a0f41e489ff00fac8a78c9564736f6c63430008040033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c8063167ff46f146041578063eb8d2444146054578063ee55efee146074575b600080fd5b60526000805460ff19166001179055565b005b60005460609060ff1681565b604051901515815260200160405180910390f35b60526000805460ff1916905556fea2646970667358221220b933bc493913bede07b1afed3bd96d775274b2379a0f41e489ff00fac8a78c9564736f6c63430008040033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 4,
+        "contract": "contracts/YourContract.sol:YourContract",
+        "label": "saleIsActive",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      }
+    ],
+    "types": {
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}
