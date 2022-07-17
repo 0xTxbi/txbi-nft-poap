@@ -21,41 +21,26 @@ contract TxbiTix is ERC721URIStorage, Ownable {
     uint256 public mintPrice = 50000000000000000;
 
     mapping(address => uint256[]) public holderTokenIDs;
+    mapping(address => bool) public checkIns;
 
     constructor() ERC721("TxbiTix", "TXBITix") {
         currentId.increment();
-        console.log(currentId.current());
     }
 
-    // Token mint function
-    function mint() public payable {
-        require(availableTickets > 0, "tickets outsold");
-        require(msg.value >= mintPrice, "insufficient ETH");
-        require(saleIsActive, "Tickets are currently unavailable");
+    function checkIn(address walletAddress) public {
+        checkIns[walletAddress] = true;
+        uint256 tokenID = holderTokenIDs[walletAddress][0];
 
-        string[3] memory svg;
-        svg[
-            0
-        ] = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text y="50">';
-        svg[1] = Strings.toString(currentId.current());
-        svg[2] = "</text></svg>";
-
-        // Interpolate and encode svg image
-        string memory image = string(abi.encodePacked(svg[0], svg[1], svg[2]));
-        string memory encodedImage = Base64.encode(bytes(image));
-        console.log(encodedImage);
-
+        // NFT metadata
         string memory json = Base64.encode(
             bytes(
                 string(
                     abi.encodePacked(
                         '{ "name": "TxbiTix #',
-                        Strings.toString(currentId.current()),
+                        Strings.toString(tokenID),
                         '", "description": "A NFT-powered ticketing system", ',
                         '"traits": [{ "trait_type": "Checked In", "value": "true" }, { "trait_type": "Purchased", "value": "true" }], ',
-                        '"image": "data:image/svg+xml;base64,',
-                        encodedImage,
-                        '" }'
+                        '"image": ipfs://QmXxGxBdZuPDS4DMiXZLeuxygaWP7DKZzfw8zN8XW7DB8p" }'
                     )
                 )
             )
@@ -64,9 +49,33 @@ contract TxbiTix is ERC721URIStorage, Ownable {
         string memory tokenURI = string(
             abi.encodePacked("data:application/json;base64,", json)
         );
-        console.log(tokenURI);
 
-        console.log(tokenURI);
+        _setTokenURI(currentId.current(), tokenURI);
+    }
+
+    // Token mint function
+    function mint() public payable {
+        require(availableTickets > 0, "tickets outsold");
+        require(msg.value >= mintPrice, "insufficient ETH");
+        require(saleIsActive, "Tickets are currently unavailable");
+
+        string memory json = Base64.encode(
+            bytes(
+                string(
+                    abi.encodePacked(
+                        '{ "name": "TxbiTix #',
+                        Strings.toString(currentId.current()),
+                        '", "description": "A NFT-powered ticketing system", ',
+                        '"traits": [{ "trait_type": "Checked In", "value": "false" }, { "trait_type": "Purchased", "value": "true" }], ',
+                        '"image": ipfs://QmPQ3wrbA8U93C4Ho1wEa6rvytQoBrVM7hVv4Abcdvddaz" }'
+                    )
+                )
+            )
+        );
+
+        string memory tokenURI = string(
+            abi.encodePacked("data:application/json;base64,", json)
+        );
 
         _safeMint(msg.sender, currentId.current());
         _setTokenURI(currentId.current(), tokenURI);
@@ -93,5 +102,14 @@ contract TxbiTix is ERC721URIStorage, Ownable {
     // disable availabilty of ticket sale
     function closeSale() public onlyOwner {
         saleIsActive = false;
+    }
+
+    // confirm ticket ownership
+    function confirmOwnership(address walletAddress)
+        public
+        view
+        returns (bool)
+    {
+        return holderTokenIDs[walletAddress].length > 0;
     }
 }

@@ -162,10 +162,61 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "walletAddress",
+        "type": "address"
+      }
+    ],
+    "name": "checkIn",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "checkIns",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "closeSale",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "walletAddress",
+        "type": "address"
+      }
+    ],
+    "name": "confirmOwnership",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {

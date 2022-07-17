@@ -6,5 +6,10 @@
     "TxbiTix": {
       "address": "0xc351628EB244ec633d5f21fBD6621e1a683B1181"
     }
+  },
+  "rinkeby": {
+    "TxbiTix": {
+      "address": "0x21aEECDED74e4765931cCa08a5F464C45CC608BC"
+    }
   }
 }
